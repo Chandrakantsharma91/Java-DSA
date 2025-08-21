@@ -246,12 +246,60 @@ public class LinkedList {
         }
         return true;
     }
+
+    public static boolean isCycle(){  // It is also known as Floyd's cycle finding aldorithum
+        Node slow = head ; 
+        Node fast = head;
+
+        while (fast != null && fast.next != null) {
+            slow = slow.next; // +1
+            fast = fast.next.next; // +2
+
+            if (slow == fast) {
+                return true; // cycle exist
+            }
+        }
+        return false; // cycle doesn't exist
+    }
+
+
+    public static void removeCycle(){
+        // detect cycle
+        Node slow = head;
+        Node fast = head;
+        boolean cycle = false;
+
+        while (fast != null && fast.next != null) {
+            slow = slow.next;
+            fast = fast.next.next;
+            if (fast == slow) {
+                cycle = true;
+                break;
+            }
+        }
+        if (cycle == false) {
+            return;
+        }
+
+        // Find meeting point
+        slow = head; 
+        Node prev = null;
+        while (slow != fast) { // last Node
+            prev = fast;
+            slow = slow.next;
+            fast = fast.next;
+        }
+
+        // remove cycle -> last.next = null
+
+        prev.next = null;
+    }
     public static void main(String[] args) {
         LinkedList ll  = new LinkedList();
-        ll.addFirst(2);
-        ll.addFirst(1);
-        ll.addLast(2);
-        ll.addLast(1);
+        // ll.addFirst(2);
+        // ll.addFirst(1);
+        // ll.addLast(2);
+        // ll.addLast(1);
         // ll.add(9, 2);
         // ll.print();
         // System.out.println(ll.size);
@@ -265,7 +313,15 @@ public class LinkedList {
         // ll.print();
         // ll.deleteNthfromEnd(3);
         // ll.reverse();
-        ll.print();
-        System.out.println(ll.checkPalli());
+        // ll.print();
+        // System.out.println(ll.checkPalli());
+
+        // for cycle detecting code
+
+        // head = new Node(1);
+        // head.next = new Node(2);
+        // head.next.next = new Node(3);
+        // head.next.next.next = head;
+        // System.out.println(isCycle());
     }
 }
