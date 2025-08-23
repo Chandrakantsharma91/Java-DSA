@@ -1,4 +1,4 @@
-package Array;
+package Array.ArrQuestions;
 
 public class Largest {
     public static int getLargest(int arr[]){

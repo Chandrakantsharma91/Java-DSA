@@ -1,4 +1,4 @@
-package Array;
+package Array.ArrQuestions;
 
 // Binary search is always used in Sorted array
 

@@ -1,4 +1,4 @@
-package Array;
+package Array.ArrQuestions;
 
 // Space complexity O(1) 
 // Time complexity O(1)

@@ -1,4 +1,4 @@
-package Array;
+package Array.ArrQuestions;
 
 public class LinearSearch {
     public static int sort(int arr[] , int key){

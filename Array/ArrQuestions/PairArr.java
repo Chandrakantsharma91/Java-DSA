@@ -1,4 +1,4 @@
-package Array;
+package Array.ArrQuestions;
 
 public class PairArr {
     public static void printPairs(int arr[]){

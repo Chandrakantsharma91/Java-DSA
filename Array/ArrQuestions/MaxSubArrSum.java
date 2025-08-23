@@ -1,4 +1,4 @@
-package Array;
+package Array.ArrQuestions;
 
 // Kadans algorithum say that make the negative number to  0 
 
